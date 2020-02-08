@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" jn-theme="bootstrap">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/jn-stencil.esm.js"></script>
+  <script nomodule src="/build/jn-stencil.js"></script>
+
+</head>
+<body>
+
+  <jn-todo-list>
+  </jn-todo-list>
+
+  <jn-toggle-button>
+
+  </jn-toggle-button>
+
+  <script>
+    var todoItems = [
+      {
+        name: 'Item One',
+        description: 'This is a description for Item One.',
+        done: true
+      },
+      {
+        name: 'Item Two',
+        description: 'This is a description for Item Two.',
+        done: false
+      }
+    ]
+    const todoList = document.querySelector('jn-todo-list')
+    todoList.items = todoItems
+    todoList.addEventListener('handleSubmit', (event) => {
+      event.preventDefault();
+      const newItem = event.detail
+      todoItems.push({
+        name: newItem.name,
+        description: newItem.description,
+        done: false
+      })
+      todoList.items = [...todoItems]
+    })
+    todoList.addEventListener('completeItem', ({detail}) => {
+      todoItems[detail].done = true
+      todoList.items = [...todoItems]
+    })
+    todoList.addEventListener('uncompleteItem', ({detail}) => {
+      todoItems[detail].done = false
+      todoList.items = [...todoItems]
+    })
+  </script>
+</body>
+</html>
