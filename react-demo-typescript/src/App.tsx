@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import { JnTodoList } from './components/components'
+// import { JnTodoList } from './components/components'
 
-interface AppState {
-
-}
 
 class App extends React.Component {
 
@@ -26,12 +23,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+{/*         
+  // @ts-ignore */}
+        <jn-toggle-button></jn-toggle-button>
       {/* 
   // @ts-ignore */}
-       <jn-todo-list
+       {/* <jn-todo-list
           items={this.state.items}
-        />
-        <JnTodoList 
+        /> */}
+        {/* <JnTodoList 
           items={this.state.items}
           onAddItem={(event) => {
             const newItem = event.detail
@@ -53,7 +53,7 @@ class App extends React.Component {
             })
             this.setState({items: newItems})
           }}
-        />
+        /> */}
     </div>
     )
   }

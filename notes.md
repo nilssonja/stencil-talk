@@ -19,9 +19,10 @@ When choosing to build your component library as web components, you are in turn
 ---
 Why NOT web components?
 
-SSR
-New Unfamiliar API
-Manual component registration
+SSR and SEO
+Performance and bundle size
+Scoped resources
+Browser Implementation
 No standardized testing strategy.
 
 ---
@@ -56,15 +57,17 @@ Well with so many options, then why Stencil? List features:
  - Theming Potential via lazy-loading.
 
 
-Okay, then how to Stencil?
+Okay, then how to Stencil? (Enter Demo)
 
-Go over stencil init CLI?
+Go over stencil init CLI:
+https://stenciljs.com/docs/getting-started
 
 Go over stencil.config.ts?
 
 Create Simple component and talk about:
 
-Talk about what a decorator is.
+Talk about what a decorator is:
+A Decorator provides a way to add annotations and meta-programming syntax for class declarations and members off that class. They are a means to modify the classes and members that follow them. Stencil uses these decorators at build time to properly transform the Stencil syntax into a standard web component.
 
 - @Component
     * Each component must be decorated with @Component.
@@ -79,6 +82,9 @@ Talk about what a decorator is.
     * Camel cased properties become dashed cased when used as attributes.
     * Can be set as mutable, where the internal logic of the component can change the prop.
 - @State
+   * Properties of a component class that maintain state.
+   * Componetn re-renders when they are updated/changed.
+   * Accessed via `this`
 - Lifecycle
 - JSX
 - Styling

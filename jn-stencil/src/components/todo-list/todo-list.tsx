@@ -4,7 +4,7 @@ import { Fragment } from '../../utils/utils'
 
 @Component({
   tag: 'jn-todo-list',
-  styleUrl: 'my-component.css',
+  styleUrl: 'todo-list.css',
   shadow: false
 })
 export class TodoList {

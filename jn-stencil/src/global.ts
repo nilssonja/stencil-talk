@@ -1,6 +1,6 @@
 import { setMode } from "@stencil/core";
 
-const themes = [ "bonbon", "bootstrap"];
+const themes = [ "bonbon", "bootstrap" ];
 
 const mode = document.documentElement.getAttribute("jn-theme") || "bootstrap"
 

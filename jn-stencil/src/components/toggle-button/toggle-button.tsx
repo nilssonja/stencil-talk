@@ -1,4 +1,4 @@
-import { Component, Prop, State, h, getMode } from "@stencil/core";
+import { Component, Prop, State, h } from "@stencil/core";
 
 /**
  * A simple toggle button component. Themable for Material and Lightning.
@@ -16,12 +16,12 @@ export class ToggleButton {
   @Prop() defaultToggled: boolean = false;
 
   /* Tracks wether the button is pressed */
-  @State() pressed: boolean = false;
+  @State() pressed: boolean = this.defaultToggled;
 
   render() {
     return (
       <button
-        class="button button-primary blue morph"
+        class="button button-primary pink morph"
         aria-pressed={this.pressed.toString()}
         onClick={() => this.pressed = !this.pressed}
       >

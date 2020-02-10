@@ -11,3 +11,70 @@
   <li><a href="https://stenciljs.com/docs/dev-server">Integrated Dev server</a></li>
   <li>Doc Generation (<a href="https://stenciljs.com/docs/docs-json">JSON</a>, <a href="https://stenciljs.com/docs/docs-readme">Markdown</a>, <a href="https://stenciljs.com/docs/docs-custom">Custom</a>)</li>
 </ul>
+
+<aside class="notes">
+  To re-iterate what was said when we began, StencilJS is a compiler for web components built by the team
+  at Ionic. Originally, Stencil was created by Ionic to solve for the increasing demand to use Ionic across multiple frameworks.
+  Since then, Ionic has decided to open source the project and make Stencil available to everyone.
+  <br />
+  <br />
+  Now, you might be curious at the "compiler" part of the description for Stencil. To put it simply, when you build
+  a component in Stencil, it is put through a specific build process that turns it into a web standards compliant web component.
+  Through a configuration file, Stencil gives you the ability to customize the output of the build process in ways we will cover during the demo.
+  <br />
+  <br />
+  Lets talk about each of these features listed above at a high level:
+  <br />
+  <br />
+  First, Stencil makes use of the JSX templating engine for defining the markup of your component. Developers coming from React
+  will already be familiar with how JSX is used to build components, and may see many similarities in the upcoming demo.
+  <br />
+  <br />
+  Another similarity to React is Stencil's provided lifecycle methods developers can use when building their component.
+  Methods such as <code>componetWillLoad()</code> and <code>componentWillUpdate()</code> are available to help the developer
+  manage the behavior of their component. However, just as with React it is important to use these methods wisely and sparingly to prevent
+  unnecessary re-renders.
+  <br />
+  <br />
+  To help mitigate the issue of performance and bundle size, web components built with StencilJS are lazy-loaded.
+  That is to say, Stencil will create multiple JS chunks for each component that are asyncronsly fetched by the client
+  to render each component on demand as the browser needs them. This cuts down significantly in the amount of code the browser
+  needs to both fetch from the server and execute up front, allowing for faster load times. We will cover this feature inmore
+  detail during the demo.
+  <br />
+  <br />
+  As I mentioned before, Stencil allows the developer to customize it's build process. One way it allows developers to do this is
+  by allowing for multiple types of build outputs that the build process generates via defining different <code>output targets</code>.
+  One of these targets will generate a hydration app that developers can use in their server middleware to hydrate a document
+  before sending it to the client.
+  <br />
+  <br />
+  Stencil also provides a tool set to allow developers to properly test their web components. For testing simple logic
+  in your component and for testing utilities, unit testing helpers such as `newSpecPage()` can help you write fast,
+  simple tests. For testing a components full behavior given certain input and interaction states, you can build
+  using their end-to-end testing helpers. E2E tests are used to verify your components behavior in a real browser
+  using puppeteer, providing better more accurate results for how your component will behave in the wild.
+  <br />
+  <br />
+  As a part of end-to-end testing, Stencil provides an API to perform visual screenshot diffs on your components as they evolve.
+  This can be very useful to ensure no visual breakages occur between releases, and to validate that new styles are getting
+  applied correctly.
+  <br />
+  <br />
+  One additional but major feature that Stencil offers is the ability to output framework bindings as an output target of the build step.
+  As mentioned before, web components were created to standardize how custom elements can be handled by the browser. While this increases the chances
+  web components can be consumed in frameworks, it does not ensure full compatability. For example, if we take a look at https://custom-elements-everywhere.com/,
+  we can get a nice high-level overview on how well web components function in many of the popular frameworks today. As we can see,
+  web components have a high rate of compatability with most frameworks, save for a select few. We will see how bindings can help overcome,
+  some of this incompatability in the demo.
+  <br />
+  <br />
+  When actively working on a component it is important to have a quick and easy means to see your changes in a live environment.
+  Fortunately, Stencil provides an easy to use dev server right out of the box. We will see how to make use of this during the demo.
+  <br />
+  <br />
+  Lastly, Stencil has a built-in documentation generation step as part of the build process. Using proper JSDOC comments above your classes,
+  methods, props, and other facets of your code, Stencil can generate a JSON that describes each of your components you can then use to build your own doc site.
+  Additionally, Stencil can generate markdown files with auto-generated prop and event tables you can view in github or gitlab alongside your component code.
+
+</aside>

@@ -2,12 +2,17 @@ const fragments = [
   [
     'intro',
     'what-are-wcs',
+    'types-of-ces',
     'why-use-wcs',
     'why-not-wcs'
   ],
   [
+    'wc-solutions',
     'enter-stencil'
-  ]
+  ],
+  ['demo'],
+  ['questions'],
+  ['thank-you']
 ]
 const slides = document.querySelector('#slides')
 

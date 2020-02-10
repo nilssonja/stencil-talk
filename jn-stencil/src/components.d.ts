@@ -12,7 +12,6 @@ import {
 } from './components/todo-list/TodoList';
 
 export namespace Components {
-  interface JnTabs {}
   interface JnTodoList {
     'items': TodoItem[];
   }
@@ -23,12 +22,6 @@ export namespace Components {
 
 declare global {
 
-
-  interface HTMLJnTabsElement extends Components.JnTabs, HTMLStencilElement {}
-  var HTMLJnTabsElement: {
-    prototype: HTMLJnTabsElement;
-    new (): HTMLJnTabsElement;
-  };
 
   interface HTMLJnTodoListElement extends Components.JnTodoList, HTMLStencilElement {}
   var HTMLJnTodoListElement: {
@@ -42,14 +35,12 @@ declare global {
     new (): HTMLJnToggleButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'jn-tabs': HTMLJnTabsElement;
     'jn-todo-list': HTMLJnTodoListElement;
     'jn-toggle-button': HTMLJnToggleButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface JnTabs {}
   interface JnTodoList {
     'items'?: TodoItem[];
     'onAddItem'?: (event: CustomEvent<any>) => void;
@@ -61,7 +52,6 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'jn-tabs': JnTabs;
     'jn-todo-list': JnTodoList;
     'jn-toggle-button': JnToggleButton;
   }
@@ -73,7 +63,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'jn-tabs': LocalJSX.JnTabs & JSXBase.HTMLAttributes<HTMLJnTabsElement>;
       'jn-todo-list': LocalJSX.JnTodoList & JSXBase.HTMLAttributes<HTMLJnTodoListElement>;
       'jn-toggle-button': LocalJSX.JnToggleButton & JSXBase.HTMLAttributes<HTMLJnToggleButtonElement>;
     }

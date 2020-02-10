@@ -7,6 +7,6 @@ import { JSX } from 'jn-stencil';
 
 import { defineCustomElements, applyPolyfills } from 'jn-stencil/loader';
 
-applyPolyfills().then(() => defineCustomElements());
-export const JnTabs = /*@__PURE__*/createReactComponent<JSX.JnTabs, HTMLJnTabsElement>('jn-tabs');
+applyPolyfills().then(() => defineCustomElements(window));
 export const JnTodoList = /*@__PURE__*/createReactComponent<JSX.JnTodoList, HTMLJnTodoListElement>('jn-todo-list');
+export const JnToggleButton = /*@__PURE__*/createReactComponent<JSX.JnToggleButton, HTMLJnToggleButtonElement>('jn-toggle-button');

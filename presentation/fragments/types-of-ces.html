@@ -5,11 +5,19 @@
     <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#autonomous-custom-element">
       Autonomous custom elements
     </a>
+    <pre>
+      <code class="html" data-trim>
+        &lt;my-component&gt;&lt;/my-component&gt;
+      </code>
+    </pre>
   </li>
   <li>
     <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#customized-built-in-element">
       Customized built-in elements
     </a>
+    <pre>
+      <code class="html" data-trim>&lt;button is="my-button"&gt;&lt;/button&gt;</code>
+    </pre>
   </li>
 </ol>
 
@@ -17,12 +25,14 @@
 According to the spec, there are two types of custom elements. The first is an Autonomous
 custom element which is defined entirely by the author. That is to say they do not extend the functionality
 of known existing HTML elements and are entirely original. It is up to the author to define the behavior and style
-of the element from scratch.
-
+of the element from scratch. For consumers of autonomous custom elements, you would
+<br />
+<br />
 The second type of custom element is the customized built-in element. These custom elements are designed
 to extend the functionality of an existing HTML element chosen by the author. This part of the spec
-is still a work in progress and only supported by Chrome.
-
+is still a work in progress and currenly only supported by Chrome, Firefox, and Opera.
+<br />
+<br />
 So, to drill down even further, when people are referring to custom elements today they are likely
 talking about autonomous custom elements, specifically.
 </aside>
