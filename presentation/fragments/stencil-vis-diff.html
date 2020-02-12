@@ -1,0 +1,24 @@
+<h2><a href="https://stenciljs.com/docs/screenshot-visual-diff">Visual Diffing</a></h2>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<pre>
+  <code class="typescript" data-trim>
+    const page = await newE2EPage();
+    ...
+    const results = await page.compareScreenshot();
+    expect(results).toMatchScreenshot({ 
+      allowableMismatchedRatio: 0.2 
+    })
+  </code>
+</pre>
+
+<aside class="notes">
+  For end-to-end testing, Stencil has an API to diff screenshots on your components as they evolve.
+  This can ensure no visual breakage occurs between releases, and to validate that new styles are
+  applied correctly.
+</aside>

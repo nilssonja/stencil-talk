@@ -1,0 +1,28 @@
+<h2><a href="https://stenciljs.com/docs/hydrate-app">SSR</a></h2>
+
+<h2>No SSR</h2>
+<pre>
+  <code class="html" data-trim>
+    <jn-toggle-button default-pressed="true"></jn-toggle-button>
+  </code>
+</pre>
+
+<h2>With SSR</h2>
+<pre>
+  <code class="html" data-trim>
+    <jn-toggle-button class="hydrated" default-pressed="true">
+      <button 
+        class="button button-primary"
+        aria-pressed="true"
+      >
+        ON
+      </button>
+    </jn-toggle-button>
+  </code>
+</pre>
+
+<aside class="notes">
+  As mentioned, Stencil lets you customize its build output. The build process can generate multiple outputs, by defining different <code>output targets</code>.
+  One of these targets will generate a hydrated app that developers can use in their server middleware to hydrate a document
+  before sending it to the client.
+</aside>

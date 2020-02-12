@@ -6,9 +6,20 @@ const fragments = [
     'why-use-wcs',
     'why-not-wcs'
   ],
+  // [
+  //   'wc-solutions'
+  // ],
   [
-    'wc-solutions',
-    'enter-stencil'
+  'enter-stencil',
+  'stencil-jsx',
+  'stencil-lifecycle',
+  'stencil-lazy-load',
+  'stencil-ssr',
+  'stencil-testing',
+  'stencil-vis-diff',
+  'stencil-bindings',
+  'stencil-dev-server',
+  'stencil-docs'
   ],
   ['demo'],
   ['questions'],
@@ -21,6 +32,8 @@ fragments.forEach(section => {
 
   section.forEach(fileName => {
     const subSectionEl = document.createElement('section')
+    fileName === 'stencil-vis-diff' && subSectionEl.setAttribute('data-background', 'assets/vis-diff.png')
+    fileName === 'stencil-vis-diff' && subSectionEl.setAttribute('data-background-size', 'contain')
     subSectionEl.id = fileName
     const fragmentLoader = document.createElement('html-fragment')
     fragmentLoader.setAttribute('src', `fragments/${fileName}.html`)
